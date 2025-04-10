@@ -1,0 +1,247 @@
+/* Global Styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-600: hsl(246, 80%, 60%);
+
+  --orange-300: hsl(15, 100%, 70%); /*(work)*/
+  --blue-300: hsl(195, 74%, 62%); /*(play)*/
+  --pink-400: hsl(348, 100%, 68%); /*(study)*/
+  --green-400: hsl(145, 58%, 55%); /*(exercise)*/
+  --purple-700: hsl(264, 64%, 52%); /*(social)*/
+  --yellow-300: hsl(43, 84%, 65%); /*(self care)*/
+
+  /* Neutral */
+
+  --navy-950: hsl(226, 43%, 10%);
+  --navy-900: hsl(235, 46%, 20%);
+  --navy-800: hsl(236, 44%, 34%);
+  --purple-500: hsl(235, 45%, 61%);
+  --navy-200: hsl(236, 100%, 87%);
+}
+
+/* Body */
+
+body {
+  background-color: var(--navy-950);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  padding: 8rem 1rem 3rem 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 75%;
+}
+
+section {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  padding-top: 0.5rem;
+}
+
+.header__icon {
+  height: 18%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0rem 1rem 0rem 1rem;
+  width: 100%;
+}
+
+.header__icon img {
+  height: 4rem;
+}
+
+.stats {
+  background-color: var(--navy-900);
+  height: 82%;
+  padding: 0rem 1.2rem 0rem 1.2rem;
+  color: whitesmoke;
+  font-weight: 300;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.daily {
+  display: none;
+}
+
+.weekly {
+  display: flex;
+}
+
+.monthly {
+  display: none;
+}
+
+.stats:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.stats h2 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.stats p {
+  font-size: 1rem;
+}
+
+.stats:hover {
+  background-color: var(--navy-800);
+}
+
+.stats__info {
+  position: relative;
+}
+
+.user {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background-color: var(--navy-900);
+  padding-top: 0rem;
+}
+
+.user__card {
+  background-color: var(--purple-600);
+  border-radius: 1rem;
+  padding: 2rem 2rem 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  height: 65%;
+}
+
+.user__card img {
+  height: 4.5rem;
+  width: 4.5rem;
+  border: 3px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: var(--navy-200);
+}
+
+.user__details p {
+  font-size: 0.9rem;
+  color: var(--navy-200);
+}
+
+.user__details h1 {
+  font-size: 2.5rem;
+  color: whitesmoke;
+  font-weight: 100;
+}
+
+nav {
+  padding: 2rem;
+  font-size: 0.7rem;
+  color: var(--navy-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35%;
+  gap: 1rem;
+}
+
+nav h2 {
+  font-weight: 300;
+}
+
+nav h2:hover {
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.work {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: var(--orange-300);
+}
+
+.play {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  background-color: var(--blue-300);
+}
+
+.study {
+  grid-column: 4/5;
+  grid-row: 1/2;
+  background-color: var(--pink-400);
+}
+
+.exercise {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: var(--green-400);
+}
+
+.social {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-color: var(--purple-700);
+}
+.social .header__icon img {
+  height: 5rem;
+}
+
+.selfcare {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-color: var(--yellow-300);
+}
+
+/* Footer */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 8rem 2rem 3rem 2rem;
+  color: var(--navy-200);
+}
+.attribution a {
+  color: var(--green-400);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
