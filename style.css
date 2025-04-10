@@ -44,7 +44,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 75%;
+  width: 75%;
 }
 
 section {
@@ -78,6 +78,7 @@ section {
   padding: 0rem 1.2rem 0rem 1.2rem;
   color: whitesmoke;
   font-weight: 300;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.8rem;
@@ -100,6 +101,9 @@ section {
 
 .stats:hover {
   cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .header {
@@ -111,6 +115,14 @@ section {
 .header h1 {
   font-size: 1rem;
   font-weight: 300;
+}
+
+.header img {
+  opacity: 60%;
+}
+
+.header img:hover {
+  opacity: 100%;
 }
 
 .stats h2 {
@@ -169,10 +181,9 @@ section {
   font-weight: 100;
 }
 
-nav {
+.nav {
   padding: 2rem;
   font-size: 0.7rem;
-  color: var(--navy-200);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,11 +191,16 @@ nav {
   gap: 1rem;
 }
 
-nav h2 {
+.nav h2 {
   font-weight: 300;
+  color: var(--navy-200);
 }
 
-nav h2:hover {
+#nav__weekly {
+  color: whitesmoke;
+}
+
+.nav h2:hover {
   color: whitesmoke;
   cursor: pointer;
   font-weight: 300;
@@ -219,6 +235,7 @@ nav h2:hover {
   grid-row: 2/3;
   background-color: var(--purple-700);
 }
+
 .social .header__icon img {
   height: 5rem;
 }
@@ -227,6 +244,21 @@ nav h2:hover {
   grid-column: 4/5;
   grid-row: 2/3;
   background-color: var(--yellow-300);
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* .previous { */
+/* font-size: 10rem; */
+/* } */
+
+.time p {
+  font-size: 0.8rem;
+  color: var(--navy-200);
 }
 
 /* Footer */
@@ -244,4 +276,194 @@ nav h2:hover {
 
 .attribution a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 4rem 0rem 1rem 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    width: 100%;
+  }
+
+  .user__card {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user__card img {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .user__details p {
+    font-size: 1rem;
+  }
+
+  .user__details h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  section {
+    width: 90%;
+    overflow: hidden;
+  }
+
+  .header__icon {
+    height: 2rem;
+  }
+  /*
+  .header__icon img {
+    height: 4rem;
+  } */
+
+  .stats {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .daily {
+    display: none;
+  }
+
+  .weekly {
+    display: flex;
+  }
+
+  .monthly {
+    display: none;
+  }
+
+  .time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .time p {
+    font-size: 1rem;
+  }
+
+  .attribution {
+    padding: 4rem 1rem 2rem 1rem;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 700px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 80%;
+  }
+
+  .work {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: var(--orange-300);
+  }
+
+  .play {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: var(--blue-300);
+  }
+
+  .study {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: var(--pink-400);
+  }
+
+  .exercise {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    background-color: var(--green-400);
+  }
+
+  .social {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    background-color: var(--purple-700);
+  }
+
+  .selfcare {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    background-color: var(--yellow-300);
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 840px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 90%;
+  }
+
+  .work {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: var(--orange-300);
+  }
+
+  .play {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    background-color: var(--blue-300);
+  }
+
+  .study {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: var(--pink-400);
+  }
+
+  .exercise {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-color: var(--green-400);
+  }
+
+  .social {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: var(--purple-700);
+  }
+
+  .selfcare {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: var(--yellow-300);
+  }
+}
+
+@media screen and (min-width: 841px) and (max-width: 950px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1080px) {
+  .container {
+    width: 90%;
+  }
 }
